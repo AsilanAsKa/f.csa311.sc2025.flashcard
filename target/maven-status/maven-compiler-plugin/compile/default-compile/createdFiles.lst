@@ -1,0 +1,9 @@
+flashcard\parser\CommandLineParser.class
+flashcard\organizer\RandomSorter.class
+flashcard\organizer\RecentMistakesFirstSorter.class
+flashcard\FlashcardApp.class
+flashcard\organizer\WorstFirstSorter.class
+flashcard\game\FlashcardSession.class
+flashcard\stats\AchievementTracker.class
+flashcard\model\Card.class
+flashcard\organizer\CardOrganizer.class
