@@ -1,7 +1,8 @@
 package flashcard.stats;
 
-import flashcard.model.Card;
 import java.util.List;
+
+import flashcard.model.Card;
 
 public class AchievementTracker {
     private final List<Card> cards;
@@ -23,7 +24,7 @@ public class AchievementTracker {
     }
 
     public void printAchievements() {
-        System.out.println("🏅 Achievements Unlocked:");
+        System.out.println("Achievements Unlocked:");
         boolean any = false;
 
         if (achievedCorrect()) {

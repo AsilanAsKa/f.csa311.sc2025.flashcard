@@ -2,7 +2,9 @@ package flashcard;
 
 import flashcard.game.FlashcardSession;
 import flashcard.parser.CommandLineParser;
-
+                                    //mvn exec:java -Dexec.args="cards.txt  --order random" --repetitions  2
+                                     //mvn exec:java -Dexec.args="cards.txt --order worst-first"
+                                     //mvn exec:java -Dexec.args="cards.txt --order recent-mistakes-first"
 public class FlashcardApp {
     public static void main(String[] args) {
         try {

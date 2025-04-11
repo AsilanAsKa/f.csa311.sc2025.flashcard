@@ -1,5 +1,4 @@
-sun::нар
-moon::сар
-hello::сайн байна уу
-goodbye::баяртай
-thank you::баярлалаа
+sun::nar
+moon::sar
+goodbye::bayrtai
+

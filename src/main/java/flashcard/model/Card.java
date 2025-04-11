@@ -1,6 +1,8 @@
 package flashcard.model;
 
-public class Card {
+import java.io.Serializable;
+
+public class Card implements Serializable {
     private final String question;
     private final String answer;
     private int correctCount = 0;
@@ -30,10 +32,13 @@ public class Card {
     public int getTotalAttempts() { return totalAttempts; }
     public long getLastMistakeTime() { return lastMistakeTime; }
 
-    @Override
-public String toString() {
-    return question + " | Mistakes: " + incorrectCount + " | LastMistakeTime: " + lastMistakeTime;
-}
+    public void mergeStatsFrom(Card other) {
+        this.correctCount += other.correctCount;
+        this.incorrectCount += other.incorrectCount;
+        this.totalAttempts += other.totalAttempts;
+        this.lastMistakeTime = Math.max(this.lastMistakeTime, other.lastMistakeTime);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -46,20 +51,4 @@ public String toString() {
     public int hashCode() {
         return 31 * question.hashCode() + answer.hashCode();
     }
-    public int compareTo(Card other) {
-        if (this.incorrectCount != other.incorrectCount) {
-            return Integer.compare(this.incorrectCount, other.incorrectCount);
-        }
-        return Long.compare(this.lastMistakeTime, other.lastMistakeTime);
-    }
-    public int compare(Card other) {
-        return Integer.compare(this.incorrectCount, other.incorrectCount);
-    }
-    public void resetStats() {
-        correctCount = 0;
-        incorrectCount = 0;
-        totalAttempts = 0;
-        lastMistakeTime = 0;
-    }
-    
-}
+} 
